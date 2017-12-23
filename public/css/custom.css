@@ -1,0 +1,22 @@
+.card-block {
+	border: 1px solid #77777726;
+	border-radius: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	margin: 5px;
+	background-color: #ffffff;
+}
+
+a.link-card {
+	text-decoration: none;
+	color: #777;
+}
+
+.btn {
+	margin-top: 5px;
+}
+
+a.add-mob {
+	padding: 5px 15px;
+	color: #777;
+	text-decoration: none;
+}
