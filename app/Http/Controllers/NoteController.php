@@ -24,7 +24,6 @@ class NoteController extends Controller
     public function index()
     {
     	$notes = Note::orderBy('created_at', 'desc')->get();
-    	// return $notes;
         return view('note/list', compact('notes'));
     }
 
@@ -42,6 +41,21 @@ class NoteController extends Controller
     	Note::create([
     		'content' => request('content'),
     	]);
+    	return redirect('login');
+    }
+
+    public function delete($id) {
+    	$note = Note::findOrFail($id);
+    	$note->delete();
+    	return redirect('home');
+    }
+    public function edit($id) {
+    	$note = Note::find($id);
+    	return view('note/edit', compact('note'));
+    }
+    public function update($id) {
+    	Note::where('id', $id)->update(array('content' => request('content')));
+    	return redirect('login');
     }
 
 

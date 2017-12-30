@@ -14,8 +14,13 @@ Auth::routes();
 Route::get('/', function() {
 	return redirect('login');
 });
-Route::get('/home', 'NoteController@index');
+Route::get('/home', 'NoteController@index')->name('home');
+Route::get('/note/delete/{id}', 'NoteController@delete')->name('note.delete');
+Route::get('/note/edit/{id}', 'NoteController@edit')->name('note.edit');
+Route::post('/note/update/{id}', 'NoteController@update')->name('note.update');
+
 Route::get('/note/{id}', 'NoteController@getOneNote');
+
 Route::get('/add', 'NoteController@add');
 Route::post('/add', 'NoteController@saveNote');
 
